@@ -4,6 +4,35 @@
 1. 无法使用单引号 ？
 2. %d ？ 应该是数值？
 3. %T ？？ 打印出来数据类型
+
+## 主要特性
+- 自动垃圾回收
+- 丰富的内置类型
+- 函数多返回值
+- 错误处理
+- 匿名函数和闭包
+- 类型和接口
+- 并发编程
+- 反射
+- 语言交互性
+## 初试go,hello world
+
+> go run hello.go  直接执行
+
+> go build hello.go
+
+
+
+```go
+package main //?
+
+import "fmt"//?
+
+//一定要main开头
+func main()  {
+	fmt.Printf("hello,worl11d \n");
+}
+```
 ## 函数包
 ### len(a)
 ### fmt 
@@ -108,7 +137,7 @@
 |true | |
 ## 声明
 ### 声明变量
-```js
+```gotemplate
 var age int
 ```
 - 必须空格区分
@@ -131,13 +160,13 @@ var age int
 
 - 常量
     - 常量用于枚举
-    ```js
-    const {
-        Unkown=0
-        Female=1
-        male=2
-    }
-    ```
+```gotemplate
+const {
+    Unkown=0
+    Female=1
+    male=2
+}
+```
     - iota(特殊常量，可以被编译器修改的常量)???	
     
 |||||||||
@@ -148,7 +177,7 @@ var age int
 ||c=iota||\||||c||
 |)|||\|||)|||
 
-```js
+```gotemplate
 const (  			
 	a=iota				
 	b=iota     =>		
@@ -219,7 +248,7 @@ const (
 - Map 类型
 ## 运算符
 - :=  (赋值操作符)
-```js
+```gotemplate
 	var a =5;  => a:=5
     var b =false; => b:=false
 ```
@@ -318,13 +347,13 @@ const (
 ## 语句
 ### 条件语句
 - if
-```js
+```gotemplate
 if a>20{		
 							
 }	
 ```
 - if ..else
-```js
+```gotemplate
 if a>20{
 
 }else{
@@ -332,7 +361,7 @@ if a>20{
 }
 ```
 - if ..if
-```js
+```go
 if a>20{
     if a==30 { 
 
@@ -341,7 +370,13 @@ if a>20{
 ```
 - switch
 
-```js
+```gotemplate
+
+package main
+
+import "fmt"
+
+fnc main(){
 switch var1 {		
 case var1:			
     ...				
@@ -352,6 +387,8 @@ case var 3
 default:			
     ....			
 }	
+}
+
 ```	    
 				
 - select 
@@ -374,10 +411,16 @@ select{
 ### 循环控制语句
 - for
 - for ...for
-```js
-for i,x:= range numbers {
-    fmt.Printf("第 %d 位 x 的值 = %d\n", i,x)
-}		
+
+```go
+package main
+import "fmt"
+
+func main(){
+	for i,x:= range numbers {
+        fmt.Printf("第 %d 位 x 的值 = %d\n", i,x)
+    }		
+}
 
 ```
 
@@ -385,8 +428,13 @@ for i,x:= range numbers {
 - continue	->	跳过当前循环剩下语句，进行下一轮循环
 - goto	->	将控制转移到被标记的语句
 - 无限循环，条件语句永远不为false则无限循环	
+
 ## 函数
-```js
+
+```gotemplate
+package main
+import "fmt"
+
 func hello([参数list])[return_types]{
             //functions body
 }
@@ -408,7 +456,7 @@ func hello([参数list])[return_types]{
 11、引用传递参数的话，在函数体内去修改，会影响外部参数
 12、函数可作为值，被赋值给其他变量
 ### 函数闭包
-```js
+```go
 package main 
 import "fmt"
 func getSequence() func() int{
