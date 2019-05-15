@@ -29,7 +29,7 @@
  
 ## 疑问
 1. 无法使用单引号 ？
-2. %d ？ 应该是数值？
+2. %d ？ 应该是数值？ 数字 double 
 3. %T ？？ 打印出来数据类型
 4. %V ？？ 打印出来数据类型 Printf()来决定
 5. 数组不是一个常量
@@ -74,6 +74,24 @@ func main()  {
 
 
 ### len(a) 只能是string 吗？
+
+```go
+package main
+import "fmt"
+func main(){
+	var numbers =make([]int,3,5)
+	printSlice(numbers)
+	
+}
+
+func printSlice(ints []int) {
+	fmt.Println("len=%d cap=%d slice=%v\n",len(ints),cap(ints),ints)
+}
+```
+
+### cap()
+测量切片最大长度可以达到多少
+
 ### fmt 
 
 |函数|入参|描述|用例|
@@ -83,11 +101,30 @@ func main()  {
 |Printlh(a,b)||||
 |Printf("%d",a)||||
 
+
 ### unsafe.Sizeof() 是干嘛的这个函数
 
 |函数|入参|描述|用例|
 |-|-|-|-|
 |Sizeof()||||
+
+### fmt.printf()
+
+|符号|描述|
+|---|---|
+|%d|数字|
+|%s|字符串|
+
+### append()函数
+- 增加切片的容量，必须创建一个新的更大的切片并把原来的分片的内容拷贝进来
+
+```gotemplate
+var n []int
+n=append(n,9859,556,6)//[9859,556,6]
+
+```
+### copy()函数
+> copy(n1,n)//n 拷贝到 n1
 
 ## 基础代码结构
 
@@ -574,6 +611,71 @@ func main(){
 ## 指针
 - 一个指针变量指向一个值的内存地址
 
+## 结构体
+
+- @TODO 数组可以存储同一个类型的数组
+- @TODO 数组如何支持结构体 arr=[999,"899",false]
+- @TODO 那只是属性而已，怎么去调用方法？？
+
+
+- 结构体实例
+```go
+package main
+import "fmt"
+
+type Books struct {
+	title string
+	author string
+	page int
+}
+
+func main()  {
+ fmt.Println(Books{"三百六十行","孙悟空",999})
+ 
+ // 当然也可以使用key value
+ fmt.Println(Books{title:"哇哈哈",author:"宗庆后",page:666})
+ 
+ // 忽略字段为 0 或 空
+
+
+ fmt.Println(Books{title:"演员的自我修养",author:"无名氏"})
+}
+
+
+```
+
+- 结构体语法
+```gotemplate
+//
+ type struct_variable_type struct{
+    member definition
+    member definition
+    ...
+    member definition
+ }
+ 
+ ```
+ 
+### 结构体指针
+
+## 切片(slice)
+[slice切片](./slice.go)
+
+- 对数组的抽象
+- “动态数组”——切片
+- 长度不限制
+- make函数创建切片
+
+### 切片如何转数组
+
+### 定义切片
+> var xx []type //不需要说明长度
+
+### 切片初始化
+> s:=[] int {1,2,3}
+
+## 语言范围 TODO
+> https://www.runoob.com/go/go-range.html
 ## 函数
 
 ```gotemplate
