@@ -36,6 +36,13 @@
 	- 不能以 const 来声明
 6. go如何声明 一串数组 [5454,"xxx",true] 
 	- 在go 中，这是一个interface
+	
+7. for迭代中 可以使用 空白符 "_"省略索引或者值
+```gotemplate
+for _,num :=range [545,545,5]{
+	fmt.Println(num)
+}
+``` 	
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
@@ -675,6 +682,9 @@ func main()  {
 > s:=[] int {1,2,3}
 
 ## 语言范围 TODO
+- range 关键字用于for循环中 迭代 数组、切片、通道、集合的芋艿
+- range在数组、切片中它返回元素和索引和索引对应的值
+- range在集合中，返回key-value对 的key值
 > https://www.runoob.com/go/go-range.html
 ## 函数
 
