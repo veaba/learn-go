@@ -42,7 +42,11 @@
 for _,num :=range [545,545,5]{
 	fmt.Println(num)
 }
-``` 	
+``` 
+
+8、 如何比较 "2019"==2019？
+9、查看数据的 类型 类似， js 中的typeof 
+> var i int=999 //期待 int
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
@@ -53,6 +57,7 @@ for _,num :=range [545,545,5]{
 - 并发编程
 - 反射
 - 语言交互性
+
 ## 初试go,hello world
 
 > go run hello.go  直接执行
@@ -686,6 +691,9 @@ func main()  {
 - range在数组、切片中它返回元素和索引和索引对应的值
 - range在集合中，返回key-value对 的key值
 > https://www.runoob.com/go/go-range.html
+
+## interface 接口
+
 ## 函数
 
 ```gotemplate
@@ -722,6 +730,7 @@ func world(x,y string)(string,string){
 11. 引用传递参数的话，在函数体内去修改，会影响外部参数
 12. 函数可作为值，被赋值给其他o变量
 13. 最少要有一个main函数
+
 ### 函数闭包
 
 ```go
@@ -744,7 +753,36 @@ func main(){
     fmt.Println(preNumber())
 }
 ```
+### 递归函数
+go 实现 斐波那契数列函数
 
+```go
+/**
+@desc 递归 recursion
+
+*/
+package main
+
+import (
+	"fmt"
+)
+
+//
+func recursion(num int) int {
+	if num <= 1 {
+		return 1
+	}
+	return recursion(num-1) + recursion(num-2)
+}
+
+func main() {
+	var a = recursion(8)
+	fmt.Println(a)
+}
+
+
+
+```
 ## 字符
 
 - 字符串链接使用 `+`来实现
