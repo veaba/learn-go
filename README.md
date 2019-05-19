@@ -36,6 +36,17 @@
 	- 不能以 const 来声明
 6. go如何声明 一串数组 [5454,"xxx",true] 
 	- 在go 中，这是一个interface
+	
+7. for迭代中 可以使用 空白符 "_"省略索引或者值
+```gotemplate
+for _,num :=range [545,545,5]{
+	fmt.Println(num)
+}
+``` 
+
+8、 如何比较 "2019"==2019？
+9、查看数据的 类型 类似， js 中的typeof 
+> var i int=999 //期待 int
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
@@ -46,6 +57,7 @@
 - 并发编程
 - 反射
 - 语言交互性
+
 ## 初试go,hello world
 
 > go run hello.go  直接执行
@@ -675,7 +687,13 @@ func main()  {
 > s:=[] int {1,2,3}
 
 ## 语言范围 TODO
+- range 关键字用于for循环中 迭代 数组、切片、通道、集合的TODO?
+- range在数组、切片中它返回元素和索引和索引对应的值
+- range在集合中，返回key-value对 的key值
 > https://www.runoob.com/go/go-range.html
+
+## interface 接口
+
 ## 函数
 
 ```gotemplate
@@ -734,7 +752,36 @@ func main(){
     fmt.Println(preNumber())
 }
 ```
+### 递归函数
+go 实现 斐波那契数列函数
 
+```go
+/**
+@desc 递归 recursion
+
+*/
+package main
+
+import (
+	"fmt"
+)
+
+//
+func recursion(num int) int {
+	if num <= 1 {
+		return 1
+	}
+	return recursion(num-1) + recursion(num-2)
+}
+
+func main() {
+	var a = recursion(8)
+	fmt.Println(a)
+}
+
+
+
+```
 ## 字符
 
 - 字符串链接使用 `+`来实现
