@@ -1,4 +1,5 @@
 ## 前言
+
 > go，代码组织像c语言，语法和一些特性 像 js
 
 ## 笔记
@@ -10,6 +11,13 @@
 	}
 
 ```
+- `:= `只能在函数内使用
+### 学习链接
+> http://c.biancheng.net/view/2.html 例子错误太多之外，还比较适合新手
+
+> http://tour.studygolang.com/basics/3 可以学习到更多的例子加深使用，适合新手
+
+
 ## 安装
 
 
@@ -45,7 +53,9 @@ for _,num :=range [545,545,5]{
 ``` 
 
 8、 如何比较 "2019"==2019？
-9、查看数据的 类型 类似， js 中的typeof 
+9、查看数据的 类型 类似， js 中的typeof
+10、怎么打印不出来常量 的位操作
+> //fmt.Printf("%i",Big)//怎 
 > var i int=999 //期待 int
 ## 主要特性
 - 自动垃圾回收
@@ -126,6 +136,7 @@ func printSlice(ints []int) {
 |---|---|
 |%d|数字|
 |%s|字符串|
+|%g||
 
 ### append()函数
 - 增加切片的容量，必须创建一个新的更大的切片并把原来的分片的内容拷贝进来
@@ -137,6 +148,16 @@ n=append(n,9859,556,6)//[9859,556,6]
 ```
 ### copy()函数
 > copy(n1,n)//n 拷贝到 n1
+
+### fmt.Sprintf()
+> fmt.Sprintf("%s:%v",header,rand.Int31())
+
+### rand.Int31()
+
+### time.Sleep(time.Second)
+
+### time.Second
+
 
 ## 基础代码结构
 
@@ -279,7 +300,17 @@ var str string = "I love the world"//go 中 这个string 类型是可以省略�
 - int 初始化 0
 - float32 初始化 0
 - pointer 初始化 nil
+### `:=` 短变量声明，省略var 关键字
+- 不能在函数外使用，只能在函数内使用
+- 必须不能被声明过
 
+### 常量
+const 声明
+
+### 零值
+- `0` 数值0
+- `false` 布尔 false
+- `""` 空字符串
 
 ## 值类型和引用类型
 
@@ -584,6 +615,7 @@ select{
 7. 如果没有default 语句，select将会阻塞，直到某个通信可以运行，go不会重新对channel或值进行求值
 	
 ### 循环控制语句
+- 只有一种循环结构，for 循环
 - for
 - for ...for
 
@@ -694,6 +726,12 @@ func main()  {
 
 ## interface 接口
 
+## 并发concurrent
+![concurrent](./src/images/concurrent.jpg)
+
+## 通道channel
+
+
 ## 函数
 
 ```gotemplate
@@ -785,3 +823,33 @@ func main() {
 ## 字符
 
 - 字符串链接使用 `+`来实现
+
+
+## 标准库包
+|包名   |描述   |
+|---    |---   |
+|bufio	|带缓冲的 I/O 操作|
+|bytes	|实现字节操作|
+|container	|封装堆、列表和环形列表等容器|
+|crypto	|加密算法|
+|database	|数据库驱动和接口|
+|debug	|各种调试文件格式访问及调试功能|
+|encoding	|常见算法如 JSON、XML、Base64 等|
+|flag	|命令行解析|
+|fmt	|格式化操作|
+|go|	Go 语言的词法、语法树、类型等。可通过这个包进行代码信息提取和修改|
+|html	|HTML 转义及模板系统|
+|image	|常见图形格式的访问及生成|
+|io	|实现 I/O 原始访问接口及访问封装|
+|math|	数学库|
+|net|	网络库，支持 Socket、HTTP、邮件、RPC、SMTP 等|
+|os|	操作系统平台不依赖平台操作封装|
+|path	|兼容各操作系统的路径操作实用函数|
+|plugin|	Go 1.7 加入的插件系统。支持将代码编译为插件，按需加载|
+|reflect|	语言反射支持。可以动态获得代码中的类型信息，获取和修改变量的值|
+|regexp	|正则表达式封装|
+|runtime|	运行时接口|
+|sort	|排序接口|
+|strings|	字符串转换、解析及实用函数|
+|time	|时间接口|
+|text	|文本模板及 Token 词法器|
