@@ -158,6 +158,59 @@ n=append(n,9859,556,6)//[9859,556,6]
 
 ### time.Second
 
+### string->float strconv.ParseFloat() 
+### string->int strconv.ParseInt() 
+### string->bool strconv.ParseBool() 
+
+### int->string
+
+
+```gotemplate
+str1 :=strconv.Itoa(i) //1 
+
+str2 :=fmt.Srpintf("%d",i)//2
+
+str3 :=strconv.formatInt()//3
+
+```
+
+### int->float float(i)
+
+```gotemplate
+	float(i)
+
+```
+
+### int->bool bool(i)
+
+### float->string
+
+```gotemplate
+str1 :=strconv.Itof(f) //1 Itoa方法
+str2 :=fmt.Sprintf("%f",f) Sprintf 方法
+str3 :=strconv.FormatFloat()//FormatFloat 转换
+```
+
+### float->int int(i)
+
+### float->bool bool(i)
+
+### bool->string  
+```gotemplate
+str1 :=fmt.Sprintf("%d",b)
+str2 :=strconv.FormatBool()
+```
+### bool->int int(i)
+
+### bool->float float(i)
+
+### byte->string string(byte)
+
+### byte->int/bool/float encoding/binary
+
+### ini/bool/float -> byte encoding/binary
+
+
 
 ## 基础代码结构
 
@@ -853,3 +906,85 @@ func main() {
 |strings|	字符串转换、解析及实用函数|
 |time	|时间接口|
 |text	|文本模板及 Token 词法器|
+
+## http
+
+```go
+/**
+
+@desc go 建立 http 服务器
+
+*/
+package main
+
+import (
+	"io"
+	"log"
+	"net/http"
+)
+
+func main()  {
+		goServer()
+}
+
+func goServer() {
+	http.HandleFunc("/",httpServer)
+	err := http.ListenAndServe(":8888",nil)
+	if err !=nil {
+		log.Fatal("ListenAndServe",err)
+	}
+}
+
+func httpServer(w http.ResponseWriter,req *http.Request)  {
+	_, _ = io.WriteString(w, "hello,world11\n")
+}
+
+```
+
+## 内置依赖包
+
+> 摘录自 https://studygolang.com/static/pkgdoc/main.html
+
+|main|sub|描述|
+| --- | --- | --- |
+|archive|       | 档案| 
+|       | tar | tar包实现tar格式压缩文件存取| 
+|       | zip | zip提取zip档案文件读写 | 
+| bufio  | | 带缓存I/O操作 | 
+| builtin | | 为Go预声明标识符提供了文档 | 
+| bytes  | | 操作[]byte的常用函数 | 
+| compress  | | | 
+|   | bzip3| | 
+|   | flate| | 
+|   | gzip | | 
+|   | lzw| | 
+|   | zlib| | 
+| container  | | | 
+|   | heap| | 
+|   | list| | 
+|   | ring| | 
+| context  | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
