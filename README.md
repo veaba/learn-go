@@ -57,6 +57,11 @@ for _,num :=range [545,545,5]{
 10、怎么打印不出来常量 的位操作
 > //fmt.Printf("%i",Big)//怎 
 > var i int=999 //期待 int
+
+11、发查询反而没有单线程顺序查询快？？
+12、在某些场景下，互斥锁要比读写锁更快！！！
+> https://studygolang.com/articles/14107#reply1
+
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
@@ -988,3 +993,88 @@ func httpServer(w http.ResponseWriter,req *http.Request)  {
 |   | | | 
 |   | | | 
 |   | | | 
+
+## 算法
+
+### 倍数算法，此时for 也类似while
+```go
+package main
+
+import "fmt"
+
+func main()  {
+	sum :=1
+	for sum <64{
+		fmt.Println(sum)
+		sum+=sum
+	}
+	fmt.Println("end:",sum)
+}
+
+
+/*
+  1
+  2
+  4
+  8
+  16
+  32
+  sum:64
+  */
+```
+
+### 牛顿法实现开平方函数
+
+简单10次循环找差值
+
+```go
+
+package main
+
+import (
+	"fmt"
+)
+
+func Sqrt(x float64) float64 {
+	z := float64(1)
+
+	for i:=0;i<10 ; i++{
+		z -= (z*z - x) / (2 * z)
+		fmt.Println(z)
+	}
+	return z
+}
+
+func main() {
+	fmt.Println(Sqrt(8))
+}
+
+```
+
+- 完善型牛顿法
+```go
+
+package main
+
+import (
+	"fmt"
+)
+
+func Sqrt(x float64) float64 {
+	const E = 0.000001
+	z := float64(1)
+	k := float64(0)
+	for ; ; z -= (z*z - x) / (2 * z) {
+		if z-k <= E&&z-k >= -E {
+			return z
+		}
+		k = z
+	}
+}
+
+func main() {
+	fmt.Println(Sqrt(8))
+}
+
+```
+
