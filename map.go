@@ -30,8 +30,19 @@ func main()  {
 
 	fmt.Println(aMap)
 
+	checkMap(aMap)
+
 
 }
+
+func checkMap(strings map[string]string) {
+	_,ok := strings["2009"]
+	if ok{
+		fmt.Println("有值")
+	}
+}
+
+
 func _delete(aMap map[string]string) {
 	fmt.Println(aMap)
 	delete(aMap,"2018")

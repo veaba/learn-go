@@ -60,6 +60,9 @@ for _,num :=range [545,545,5]{
 
 11、发查询反而没有单线程顺序查询快？？
 12、在某些场景下，互斥锁要比读写锁更快！！！
+
+13、如何从这个字符串解析自己想要的数据
+> &{GET / HTTP/1.1 1 1 map[Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9,es;q=0.8,es-ES;q=0.7] Cache-Control:[max-age=0] Connection:[keep-alive] Upgrade-Insecure-Requests:[1] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36]] {} <nil> 0 [] false 127.0.0.1:8888 map[] map[] <nil> map[] 127.0.0.1:56865 / <nil> <nil> <nil> 0xc000018200}
 > https://studygolang.com/articles/14107#reply1
 
 ## 主要特性
@@ -215,7 +218,7 @@ str2 :=strconv.FormatBool()
 
 ### ini/bool/float -> byte encoding/binary
 
-
+### log.Fatal 似乎是一个打印错日志
 
 ## 基础代码结构
 
@@ -717,8 +720,33 @@ func main(){
 
 - @TODO 数组可以存储同一个类型的数组
 - @TODO 数组如何支持结构体 arr=[999,"899",false]
-- @TODO 那只是属性而已，怎么去调用方法？？
+- 那只是属性而已，怎么去调用方法？？
 
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+type Class struct {
+	x,y float64
+}
+
+// * 地址
+func (v *Class) Woo() float64  {
+	fmt.Println(Class{})
+	return math.Sqrt(v.x*v.x+v.y*v.y)
+}
+
+func main()  {
+	v :=&Class{3,4}
+	fmt.Println(v.Woo())
+	fmt.Println(v)
+}
+
+```
 
 - 结构体实例
 ```go
@@ -875,8 +903,31 @@ func main() {
 	fmt.Println(a)
 }
 
+```
 
+go 通过闭包实现斐波那契数列
 
+```go
+package main
+
+import "fmt"
+
+func main() {
+	f := fibonacci()
+	for i := 0; i < 10; i++ {
+		fmt.Println(f())
+	}
+}
+
+// fibonacci 函数会返回一个返回 int 的函数。
+func fibonacci() func() int {
+	x,y:=0,1
+	return func() int {
+		temp := x
+		x, y = y, (x + y)
+		return temp
+	}
+}
 ```
 ## 字符
 
