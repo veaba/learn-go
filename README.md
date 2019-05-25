@@ -57,6 +57,11 @@ for _,num :=range [545,545,5]{
 10、怎么打印不出来常量 的位操作
 > //fmt.Printf("%i",Big)//怎 
 > var i int=999 //期待 int
+
+11、发查询反而没有单线程顺序查询快？？
+12、在某些场景下，互斥锁要比读写锁更快！！！
+> https://studygolang.com/articles/14107#reply1
+
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
@@ -157,6 +162,59 @@ n=append(n,9859,556,6)//[9859,556,6]
 ### time.Sleep(time.Second)
 
 ### time.Second
+
+### string->float strconv.ParseFloat() 
+### string->int strconv.ParseInt() 
+### string->bool strconv.ParseBool() 
+
+### int->string
+
+
+```gotemplate
+str1 :=strconv.Itoa(i) //1 
+
+str2 :=fmt.Srpintf("%d",i)//2
+
+str3 :=strconv.formatInt()//3
+
+```
+
+### int->float float(i)
+
+```gotemplate
+	float(i)
+
+```
+
+### int->bool bool(i)
+
+### float->string
+
+```gotemplate
+str1 :=strconv.Itof(f) //1 Itoa方法
+str2 :=fmt.Sprintf("%f",f) Sprintf 方法
+str3 :=strconv.FormatFloat()//FormatFloat 转换
+```
+
+### float->int int(i)
+
+### float->bool bool(i)
+
+### bool->string  
+```gotemplate
+str1 :=fmt.Sprintf("%d",b)
+str2 :=strconv.FormatBool()
+```
+### bool->int int(i)
+
+### bool->float float(i)
+
+### byte->string string(byte)
+
+### byte->int/bool/float encoding/binary
+
+### ini/bool/float -> byte encoding/binary
+
 
 
 ## 基础代码结构
@@ -853,3 +911,170 @@ func main() {
 |strings|	字符串转换、解析及实用函数|
 |time	|时间接口|
 |text	|文本模板及 Token 词法器|
+
+## http
+
+```go
+/**
+
+@desc go 建立 http 服务器
+
+*/
+package main
+
+import (
+	"io"
+	"log"
+	"net/http"
+)
+
+func main()  {
+		goServer()
+}
+
+func goServer() {
+	http.HandleFunc("/",httpServer)
+	err := http.ListenAndServe(":8888",nil)
+	if err !=nil {
+		log.Fatal("ListenAndServe",err)
+	}
+}
+
+func httpServer(w http.ResponseWriter,req *http.Request)  {
+	_, _ = io.WriteString(w, "hello,world11\n")
+}
+
+```
+
+## 内置依赖包
+
+> 摘录自 https://studygolang.com/static/pkgdoc/main.html
+
+|main|sub|描述|
+| --- | --- | --- |
+|archive|       | 档案| 
+|       | tar | tar包实现tar格式压缩文件存取| 
+|       | zip | zip提取zip档案文件读写 | 
+| bufio  | | 带缓存I/O操作 | 
+| builtin | | 为Go预声明标识符提供了文档 | 
+| bytes  | | 操作[]byte的常用函数 | 
+| compress  | | | 
+|   | bzip3| | 
+|   | flate| | 
+|   | gzip | | 
+|   | lzw| | 
+|   | zlib| | 
+| container  | | | 
+|   | heap| | 
+|   | list| | 
+|   | ring| | 
+| context  | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+|   | | | 
+
+## 算法
+
+### 倍数算法，此时for 也类似while
+```go
+package main
+
+import "fmt"
+
+func main()  {
+	sum :=1
+	for sum <64{
+		fmt.Println(sum)
+		sum+=sum
+	}
+	fmt.Println("end:",sum)
+}
+
+
+/*
+  1
+  2
+  4
+  8
+  16
+  32
+  sum:64
+  */
+```
+
+### 牛顿法实现开平方函数
+
+简单10次循环找差值
+
+```go
+
+package main
+
+import (
+	"fmt"
+)
+
+func Sqrt(x float64) float64 {
+	z := float64(1)
+
+	for i:=0;i<10 ; i++{
+		z -= (z*z - x) / (2 * z)
+		fmt.Println(z)
+	}
+	return z
+}
+
+func main() {
+	fmt.Println(Sqrt(8))
+}
+
+```
+
+- 完善型牛顿法
+```go
+
+package main
+
+import (
+	"fmt"
+)
+
+func Sqrt(x float64) float64 {
+	const E = 0.000001
+	z := float64(1)
+	k := float64(0)
+	for ; ; z -= (z*z - x) / (2 * z) {
+		if z-k <= E&&z-k >= -E {
+			return z
+		}
+		k = z
+	}
+}
+
+func main() {
+	fmt.Println(Sqrt(8))
+}
+
+```
+
