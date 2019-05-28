@@ -2,6 +2,13 @@
 
 > go，代码组织像c语言，语法和一些特性 像 js
 
+## go命令
+
+- go fmt 官方格式化代码
+- go doc 提取首行注释
+- go install 安装go包
+- go fix 旧版更新和修改到新版
+- go test 轻量级的单元测试框架
 ## 笔记
 - `{`不能单独一行
 ```gotemplate
@@ -65,6 +72,8 @@ for _,num :=range [545,545,5]{
 > &{GET / HTTP/1.1 1 1 map[Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9,es;q=0.8,es-ES;q=0.7] Cache-Control:[max-age=0] Connection:[keep-alive] Upgrade-Insecure-Requests:[1] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36]] {} <nil> 0 [] false 127.0.0.1:8888 map[] map[] <nil> map[] 127.0.0.1:56865 / <nil> <nil> <nil> 0xc000018200}
 > https://studygolang.com/articles/14107#reply1
 
+14、语法提示 main redeclared in this block
+同一个目录下面不能有多个package main
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
