@@ -1,6 +1,8 @@
 ## 前言
-
 > go，代码组织像c语言，语法和一些特性 像 js
+
+## TODO
+>https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.4.md
 
 ## go命令
 
@@ -19,12 +21,14 @@
 
 ```
 - `:= `只能在函数内使用
+- go文件以小写字母组成，多个部分，以 `_`分割
 ### 学习链接
 > http://c.biancheng.net/view/2.html 例子错误太多之外，还比较适合新手
 
 > http://tour.studygolang.com/basics/3 可以学习到更多的例子加深使用，适合新手
 
 > https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md Go 语言入门
+
 ## 安装
 
 
@@ -706,6 +710,9 @@ func main(){
 - goto	->	将控制转移到被标记的语句
 - 无限循环，条件语句永远不为false则无限循环	
 
+### 判断字符串为空
+- if str == "" {}
+- if len(str)==0{}
 ## 数组
 - 如何声明 一串数组 [5454,"xxx",true]
 ### 声明数组
@@ -938,10 +945,53 @@ func fibonacci() func() int {
 	}
 }
 ```
+
+###  传递变长参数
+
+> func myFunc(a, b, arg ...int) {}
+
+```gotemplate
+func Greeting(prefix string, who ...string)
+Greeting("hello:", "Joe", "Anna", "Eileen")
+```
+
+## 时间Date
+更多 http://docs.studygolang.com/pkg/time/
+
+
 ## 字符
 
 - 字符串链接使用 `+`来实现
+- `\n` 换行符
+- `\r` 回车符
+- `\t` tab键
+- `\u` 或 `\U` unicode字符
+- `\\`：反斜杠自身
 
+### 方法
+更多：http://docs.studygolang.com/pkg/strings/
+
+- strings.HasPrefix(s,prefix string) //bool prefix 开头
+- strings.HasSuffix(s,suffix string) //bool suffix 结尾
+- strings.Contains(s,substr string) //bool 判断字符串包含
+- strings.Index(s,str string) int //索引，-1不包含
+- strings.LastIndex(s,str string) int 从最后出现的位置
+- strings.IndexRune(s string,r rune) int 如果需要查询非 ASCII 编码的字符在父字符串中的位置，建议使用以下函数来对字符进行定位：
+- strings.Replace(str,old,new,n) `str`字符串，前`n`个字符串` old`替换为`new`，并返回一新的字符串,n=-1则替换 所有`old` 为 `new`
+- strings.Count(s,str,string) //int 计算字符串 str 在字符串 s 中出现的非重叠次数：
+- strings.Repeat(s,count int) //string 重复字符串
+- strings.ToLower(s) 小写
+- strings.ToUpper(s) 大写
+- strings.TrimSpace(s)提出字符串开头和结尾的空白符号
+- strings.Trim(s,"cut") 将结尾和开头的`cut`去除
+- strings.TrimLeft(s)
+- strings.TrimRight(s)
+- strings.Join(sl [] string,sep string)//"GO1 - The ABC of Go - 25 - "-> "GO1;The ABC of Go;25"
+- strings.Fields(str) //todo? "The quick brown fox jumps over the lazy dog"-> ["The quick brown fox jumps over the lazy dog"]
+- strings.Split(s,str)//"GO1|The ABC of Go|25"->[GO1 The ABC of Go 25]
+
+### 字符串与其他类型转换，通过 `strconv` 包实现
+更多 http://docs.studygolang.com/pkg/strconv/
 
 ## 标准库包
 |包名   |描述   |
