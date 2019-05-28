@@ -12,6 +12,7 @@ func main() {
 	var a = recursion(8)
 	fmt.Println(a)
 }
+
 //
 func recursion(num int) int {
 	if num <= 1 {

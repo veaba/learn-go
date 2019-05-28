@@ -18,7 +18,7 @@ import (
 )
 
 type Class struct {
-	x,y float64
+	x, y float64
 }
 
 /**
@@ -28,11 +28,11 @@ type Class struct {
 - func (v Class) Woo() float64  {}  区别
 */
 
-func (v Class) Woo() float64  {
-	return math.Sqrt(v.x*v.x+v.y*v.y)
+func (v Class) Woo() float64 {
+	return math.Sqrt(v.x*v.x + v.y*v.y)
 }
 
-func main()  {
-	v :=&Class{3,4}
+func main() {
+	v := &Class{3, 4}
 	fmt.Println(v.Woo())
 }

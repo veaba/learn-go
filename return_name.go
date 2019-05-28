@@ -7,15 +7,15 @@ package main
 
 import "fmt"
 
-func split(sum int)(x1,y1 int)  {
-	x1 = sum *4 /9
-	y1 = sum-4
+func split(sum int) (x1, y1 int) {
+	x1 = sum * 4 / 9
+	y1 = sum - 4
 
 	fmt.Println(sum) // 17
-	fmt.Println(x1) //7
-	fmt.Println(y1) //13
+	fmt.Println(x1)  //7
+	fmt.Println(y1)  //13
 	return
 }
-func main()  {
+func main() {
 	fmt.Println(split(17)) //7 13
 }

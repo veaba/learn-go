@@ -12,20 +12,19 @@ import (
 	"net/http"
 )
 
-func main()  {
-		goServer()
+func main() {
+	goServer()
 }
 
 func goServer() {
-	http.HandleFunc("/",httpServer)
-	err := http.ListenAndServe(":8888",nil)
-	if err !=nil {
-		log.Fatal("ListenAndServe",err)
+	http.HandleFunc("/", httpServer)
+	err := http.ListenAndServe(":8888", nil)
+	if err != nil {
+		log.Fatal("ListenAndServe", err)
 	}
 }
 
-
-func httpServer(w http.ResponseWriter,req *http.Request)  {
+func httpServer(w http.ResponseWriter, req *http.Request) {
 	fmt.Println(req)
 	_, _ = io.WriteString(w, "hello,world11\n")
 }

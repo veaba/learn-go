@@ -18,31 +18,31 @@ func (de *DivideRrror) Error() string {
 	dividee:%d
 	divider:0
 	`
-	return fmt.Sprintf(strFormat,de.dividee)
+	return fmt.Sprintf(strFormat, de.dividee)
 }
 
 // 定义 'int' 类型除法运算的函数
 
-func Divide(varDividee int,varDivider int)(result int,errorMsg string)  {
-	if varDividee==0{
+func Divide(varDividee int, varDivider int) (result int, errorMsg string) {
+	if varDividee == 0 {
 		dData := DivideRrror{
-			dividee:varDividee,
-			divider:varDivider,
+			dividee: varDividee,
+			divider: varDivider,
 		}
 		errorMsg = dData.Error()
 		return
-	}else {
-		return  varDividee/varDivider,""
+	} else {
+		return varDividee / varDivider, ""
 	}
 }
-func main()  {
+func main() {
 	//正常情况下
-	if result,errorMsg :=Divide(100,10);errorMsg==""{
-		fmt.Println("100/10=",result)
+	if result, errorMsg := Divide(100, 10); errorMsg == "" {
+		fmt.Println("100/10=", result)
 	}
 
 	//当被除数为0的时候，则会返回错误信息
-	if _,errorMsg := Divide(100,0);errorMsg!=""{
-		fmt.Println("errorMsg is :",errorMsg)
+	if _, errorMsg := Divide(100, 0); errorMsg != "" {
+		fmt.Println("errorMsg is :", errorMsg)
 	}
 }

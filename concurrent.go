@@ -9,14 +9,14 @@ import (
 	"time"
 )
 
-func say(s string)  {
-	for i:=0 ;i<10;i++{
-		time.Sleep(100*time.Microsecond)
+func say(s string) {
+	for i := 0; i < 10; i++ {
+		time.Sleep(100 * time.Microsecond)
 		fmt.Println(s)
 	}
 }
 
-func main()  {
+func main() {
 	fmt.Println("我是第一个")
 	go say("2019MSI G2获得冠军")
 	say("hello")

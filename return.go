@@ -8,11 +8,11 @@ package main
 
 import "fmt"
 
-func Return(x,y string) (string,string)  {
-	return x,y
+func Return(x, y string) (string, string) {
+	return x, y
 }
 
-func main()  {
-	hello,world :=Return("hello","world")
-	fmt.Println(hello,world)
+func main() {
+	hello, world := Return("hello", "world")
+	fmt.Println(hello, world)
 }

@@ -9,7 +9,7 @@ func Sqrt(x float64) float64 {
 	z := float64(1)
 	k := float64(0)
 	for ; ; z -= (z*z - x) / (2 * z) {
-		if z-k <= E&&z-k >= -E {
+		if z-k <= E && z-k >= -E {
 			return z
 		}
 		k = z

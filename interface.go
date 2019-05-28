@@ -10,15 +10,15 @@ package main
 import "fmt"
 
 func main() {
-	m:=map[string]interface{}{"name":"娃娃。","age":999} //和map 格式一样
+	m := map[string]interface{}{"name": "娃娃。", "age": 999} //和map 格式一样
 	fmt.Println(m)
 
 	var phone Phone
-	phone = new (OnePlus)
+	phone = new(OnePlus)
 	phone.Call()
 	phone.Who()
 
-	phone = new (IPhone)
+	phone = new(IPhone)
 	phone.Call()
 	phone.Who()
 
@@ -28,13 +28,10 @@ func main() {
 	fmt.Println(typeOne)
 }
 
-
-
 // 定义一个手机的接口
 type Phone interface {
 	Call()
-	Who()//定义了一个方法call()
-
+	Who() //定义了一个方法call()
 
 }
 
@@ -42,9 +39,7 @@ type OnePlus struct {
 	name string
 }
 
-
 type IPhone struct {
-
 }
 
 func (onePlus OnePlus) Call() {
@@ -54,7 +49,7 @@ func (onePlus OnePlus) Who() {
 	fmt.Println("who who ")
 }
 
-func (IPhone IPhone)Call() {
+func (IPhone IPhone) Call() {
 	fmt.Println("iPhone call police")
 }
 func (IPhone IPhone) Who() {

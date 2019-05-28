@@ -18,7 +18,7 @@ func main() {
 	)
 	var b1 = a2 + a3
 	var b2 = a1 + a4
-	a4+=6
+	a4 += 6
 	fmt.Println(b1)
 	fmt.Println(b2)
 	fmt.Println(a4)

@@ -17,7 +17,7 @@ func viodPtr() {
 		fmt.Println("空指针")
 	}
 
-	if (prt != nil) {
+	if prt != nil {
 		fmt.Println("不等于空指针")
 	}
 	fmt.Println(prt)
@@ -62,11 +62,11 @@ func ptrFunc() {
 	var a = 666
 	var b = 999
 
-	fmt.Println(a,b)
+	fmt.Println(a, b)
 
 	swap(&a, &b)
 
-	fmt.Println(a,b)
+	fmt.Println(a, b)
 
 }
 

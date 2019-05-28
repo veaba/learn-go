@@ -13,24 +13,24 @@ import (
 )
 
 type Hello struct {
-	w string
+	w      string
 	Accept string
 }
 
-func (hello Hello) ServeHTTP(w http.ResponseWriter,r *http.Request) {
-	a, b  := fmt.Fprint(w, "hello world!")
-	fmt.Println(a,b)
+func (hello Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	a, b := fmt.Fprint(w, "hello world!")
+	fmt.Println(a, b)
 	fmt.Println(&a)
 	fmt.Println(&b)
 	fmt.Println(r)
 
 }
 
-func main()  {
+func main() {
 	var h Hello
 	h.w = "wwwww"
-	err :=http.ListenAndServe("localhost:8888",h)
-	if err != nil{
+	err := http.ListenAndServe("localhost:8888", h)
+	if err != nil {
 		log.Fatal(err)
 	}
 }

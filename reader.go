@@ -11,16 +11,16 @@ import (
 	"strings"
 )
 
-func main()  {
-	r:=strings.NewReader("你xxx挖到ad是好，傻等我打da54456d4傻!")
-	b:=make([]byte,8)
+func main() {
+	r := strings.NewReader("你xxx挖到ad是好，傻等我打da54456d4傻!")
+	b := make([]byte, 8)
 
-	for{
-		n,err :=r.Read(b)
-		fmt.Printf("n=%v, err=%v, b=%v\n",n,err,b)
-		fmt.Printf("b[:n]=%q\n",b[:n])
+	for {
+		n, err := r.Read(b)
+		fmt.Printf("n=%v, err=%v, b=%v\n", n, err, b)
+		fmt.Printf("b[:n]=%q\n", b[:n])
 
-		if err==io.EOF{
+		if err == io.EOF {
 			fmt.Println("exit 退出")
 			break
 		}

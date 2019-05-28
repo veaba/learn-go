@@ -24,7 +24,7 @@ func main() {
 - 0 和 1 开始，之后的斐波那契数列系数就由之前的两数相加。
 */
 func fibonacci() func() int {
-	x,y:=0,1
+	x, y := 0, 1
 	return func() int {
 		temp := x
 		x, y = y, (x + y)

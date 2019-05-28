@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func main()  {
+func main() {
 	/// const b = "我爱中国" //隐式声明
 	// const a string = "I love china" //显示声明
 
@@ -14,8 +14,8 @@ func main()  {
 	// 常做枚举
 	const (
 		name = "Jo gel"
-		job = "teacher"
-		age = 999
+		job  = "teacher"
+		age  = 999
 	)
 
 	// fmt.Println(name,job,age)
@@ -24,4 +24,3 @@ func main()  {
 	fmt.Println(len(name))
 	fmt.Println(len(job))
 }
-

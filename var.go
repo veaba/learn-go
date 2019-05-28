@@ -58,7 +58,7 @@ func main() {
 	//var val4 = "99999"
 	//var val5 = val4
 
-	fmt.Println(val1,val2)
+	fmt.Println(val1, val2)
 	fmt.Println("&val1", &val1) //
 	fmt.Println("&val2", &val2) //内存地址可能一样的
 	//fmt.Println("&val3",&val3) //内存地址和val2不一样

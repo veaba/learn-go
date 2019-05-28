@@ -1,4 +1,3 @@
-
 /**
 @desc 结构体
 @TODO 数组可以存储同一个类型的数组
@@ -13,20 +12,20 @@ package main
 import "fmt"
 
 type Books struct {
-	name string
+	name   string
 	author string
-	page int
+	page   int
 }
 
-func main()  {
-	fmt.Println(Books{"《西游记》","吴承恩",9999})
+func main() {
+	fmt.Println(Books{"《西游记》", "吴承恩", 9999})
 
-	fmt.Println(Books{name:"《红楼梦》",author:"曹雪芹",page:544})
+	fmt.Println(Books{name: "《红楼梦》", author: "曹雪芹", page: 544})
 
-	fmt.Println(Books{name:"《三国演义》",page:666})
+	fmt.Println(Books{name: "《三国演义》", page: 666})
 
 	var book1 Books
-	book1.name="《水浒传》"
+	book1.name = "《水浒传》"
 
 	fmt.Println(book1) //{《水浒传》  0} 为什么 0 也要显示呢？0 或者空
 
@@ -39,7 +38,7 @@ func main()  {
 
 func structPtr() {
 	var book2 Books
-	book2.author="小李子"
+	book2.author = "小李子"
 
 	printBook(&book2)
 }
@@ -48,5 +47,3 @@ func printBook(books *Books) {
 	fmt.Println(books.author)
 	fmt.Println(books)
 }
-
-

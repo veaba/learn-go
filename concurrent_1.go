@@ -26,18 +26,17 @@ import (
 )
 
 // data product channel chan<-string
-func producter(header string)  {
+func producter(header string) {
 	// 无限循环，不停生成数据
-
 
 	//fmt.Println(fmt.Sprintf("%s:%v",header,rand.Int31()))
 
 	//channel<- fmt.Sprintf("%s:%v",header,rand.Int31())
 
-	for{
+	for {
 		// 将随机数和字符串格式化为发送给通道
 		//channel<- fmt.Sprintf("%s:%v",header,rand.Int31())
-		fmt.Println(fmt.Sprintf("%s:%v",header,rand.Int31()))
+		fmt.Println(fmt.Sprintf("%s:%v", header, rand.Int31()))
 
 		// 等待1s
 		time.Sleep(time.Second) //类似js中的 setTimeout
@@ -47,16 +46,16 @@ func producter(header string)  {
 
 // data customer
 
-func customer(channel<-chan string)  {
+func customer(channel <-chan string) {
 	//不停的捕获数据
-	for  {
+	for {
 		//从通道中取出数据，此处会阻塞直到信道中返回数据
-		message:= <-channel
+		message := <-channel
 		fmt.Println(message)
 	}
 }
 
-func main()  {
+func main() {
 	//创建一个字符串类型的通道
 	//channel := make(chan string)
 

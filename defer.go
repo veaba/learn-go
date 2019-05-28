@@ -7,15 +7,15 @@ package main
 
 import "fmt"
 
-func main()  {
-	defer fmt.Println("world")//4
+func main() {
+	defer fmt.Println("world") //4
 
-	fmt.Println("hello")//1
+	fmt.Println("hello") //1
 
-	defer fmt.Println("world1")//3
-	fmt.Println("hello1")//2
+	defer fmt.Println("world1") //3
+	fmt.Println("hello1")       //2
 
-	for i:=0;i<10 ;i++  {
+	for i := 0; i < 10; i++ {
 		defer fmt.Println(i)
 	}
 }

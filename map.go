@@ -7,16 +7,16 @@ package main
 
 import "fmt"
 
-func main()  {
-	var aMap  map[string]string //创建集合
-	fmt.Println(aMap)//map[]
+func main() {
+	var aMap map[string]string //创建集合
+	fmt.Println(aMap)          //map[]
 
-	aMap=make(map[string]string)
-	fmt.Println(aMap)//map[] //map[]
+	aMap = make(map[string]string)
+	fmt.Println(aMap) //map[] //map[]
 
-	aMap["2019"]="MSI2018，季中冠军赛"
-	aMap["2018"]="屌丝之年"
-	aMap["2020"]="希望之年"
+	aMap["2019"] = "MSI2018，季中冠军赛"
+	aMap["2018"] = "屌丝之年"
+	aMap["2020"] = "希望之年"
 	fmt.Println(aMap)
 
 	//for k,v:=range aMap{
@@ -32,24 +32,21 @@ func main()  {
 
 	checkMap(aMap)
 
-
 }
 
 func checkMap(strings map[string]string) {
-	_,ok := strings["2009"]
-	if ok{
+	_, ok := strings["2009"]
+	if ok {
 		fmt.Println("有值")
 	}
 }
 
-
 func _delete(aMap map[string]string) {
 	fmt.Println(aMap)
-	delete(aMap,"2018")
+	delete(aMap, "2018")
 	fmt.Println(aMap)
 
-	for k,v:=range aMap{
-		fmt.Println(k,v)
+	for k, v := range aMap {
+		fmt.Println(k, v)
 	}
 }
-

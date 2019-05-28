@@ -28,7 +28,7 @@ func init() {
 }
 
 func test() {
-	fmt.Println("xxx\n" +"I love the world")
+	fmt.Println("xxx\n" + "I love the world")
 }
 
 // init,worlld

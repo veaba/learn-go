@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-func main()  {
-	sum :=1
-	for sum <64{
+func main() {
+	sum := 1
+	for sum < 64 {
 		fmt.Println(sum)
-		sum+=sum
+		sum += sum
 	}
-	fmt.Println("end:",sum)
+	fmt.Println("end:", sum)
 }
