@@ -24,7 +24,7 @@
 
 > http://tour.studygolang.com/basics/3 可以学习到更多的例子加深使用，适合新手
 
-
+> https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md Go 语言入门
 ## 安装
 
 
@@ -73,7 +73,7 @@ for _,num :=range [545,545,5]{
 > https://studygolang.com/articles/14107#reply1
 
 14、语法提示 main redeclared in this block
-同一个目录下面不能有多个package main
+> 同一个目录下面不能有多个package main
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
