@@ -2,8 +2,8 @@
 > go，代码组织像c语言，语法和一些特性 像 js
 
 ## TODO
->https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.4.md
-
+> https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/06.4.md
+> https://github.com/adonovan/gopl.io Go程序设计语言源码
 ## go命令
 
 - go fmt 官方格式化代码
@@ -76,6 +76,32 @@ for _,num :=range [545,545,5]{
 > &{GET / HTTP/1.1 1 1 map[Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9,es;q=0.8,es-ES;q=0.7] Cache-Control:[max-age=0] Connection:[keep-alive] Upgrade-Insecure-Requests:[1] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36]] {} <nil> 0 [] false 127.0.0.1:8888 map[] map[] <nil> map[] 127.0.0.1:56865 / <nil> <nil> <nil> 0xc000018200}
 > https://studygolang.com/articles/14107#reply1
 
+解决：
+```text
+fmt.Println("xxxxx====xxx")
+fmt.Println("Method：", r.Method)
+fmt.Println("URL：", r.URL)
+fmt.Println("Proto：", r.Proto)
+fmt.Println("ProtoMajor ：", r.ProtoMajor)
+fmt.Println("ProtoMinor ：", r.ProtoMinor)
+fmt.Println("Header ：", r.Header)
+fmt.Println("Accept: ：", r.Header["Accept"])
+fmt.Println("Body  ：", r.Body)
+fmt.Println("ContentLength   ：", r.ContentLength)
+fmt.Println("TransferEncoding    ：", r.TransferEncoding)
+fmt.Println("Close     ：", r.Close)
+fmt.Println("Host ：", r.Host)
+fmt.Println("Form ：", r.Form)
+fmt.Println("PostForm  ：", r.PostForm)
+fmt.Println("MultipartForm  ：", r.MultipartForm)
+fmt.Println("Trailer   ：", r.Trailer)
+fmt.Println("RemoteAddr   ：", r.RemoteAddr)
+fmt.Println("RequestURI   ：", r.RequestURI)
+fmt.Println("MultipartForm  ：", r.MultipartForm)
+fmt.Println("TLS   ：", r.TLS)
+fmt.Println("Cancel   ：", r.Cancel)
+fmt.Println("Response   ：", r.Response)
+```
 14、语法提示 main redeclared in this block
 > 同一个目录下面不能有多个package main
 ## 主要特性
@@ -1132,6 +1158,9 @@ func httpServer(w http.ResponseWriter,req *http.Request)  {
 |   | | | 
 |   | | | 
 
+## Http
+- https://godoc.org/net/http#Request.Method
+> http - GoDoc
 ## 算法
 
 ### 倍数算法，此时for 也类似while

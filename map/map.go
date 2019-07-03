@@ -3,7 +3,7 @@
 @map hash表来实现的
 @如果不初始化，则会创建一个nil map，nil map 无法存放键值对
 */
-package _map
+package main
 
 import "fmt"
 
