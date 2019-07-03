@@ -6,6 +6,16 @@
 //!+main
 // >go build lissajous.go && lissajous.exe web web执行
 // Lissajous generates GIF animations of random Lissajous figures.
+
+/*
+- go run lissajous.go web
+- go build lissajous.go && lissajous.exe web
+- go build lissajous.go && lissajous.exe web.gif
+
+
+
+
+*/
 package main
 
 import (
@@ -29,7 +39,9 @@ import (
 
 //!+main
 
-var palette = []color.Color{color.White, color.Black}
+var palette = []color.Color{color.RGBA{0, 255, 0, 1}, color.Black}
+
+//var palette = []color.Color{color.White, color.Black}
 
 const (
 	whiteIndex = 0 // first color in palette
@@ -55,7 +67,6 @@ func main() {
 			fmt.Println("ProtoMinor ：", r.ProtoMinor)
 			fmt.Println("Header ：", r.Header)
 			fmt.Println("Accept: ：", r.Header["Accept"])
-
 
 			fmt.Println("Body  ：", r.Body)
 			fmt.Println("ContentLength   ：", r.ContentLength)
