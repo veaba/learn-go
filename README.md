@@ -104,6 +104,8 @@ fmt.Println("Response   ：", r.Response)
 ```
 14、语法提示 main redeclared in this block
 > 同一个目录下面不能有多个package main
+
+15、go  语言如何返回json接口数据
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
