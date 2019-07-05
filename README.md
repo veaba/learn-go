@@ -27,7 +27,9 @@
 
 > http://tour.studygolang.com/basics/3 可以学习到更多的例子加深使用，适合新手
 
-> https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md Go 语言入门
+> https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md 《Go 语言入门指南》
+
+> https://books.studygolang.com/The-Golang-Standard-Library-by-Example/chapter01/01.1.html 《Go语言中文网》
 
 ## 安装
 
@@ -106,6 +108,22 @@ fmt.Println("Response   ：", r.Response)
 > 同一个目录下面不能有多个package main
 
 15、go  语言如何返回json接口数据
+
+16、go struct 转为map 输出
+
+```gotemplate
+type Object struct {
+	X int
+	Y int
+}
+m := make(map[string]interface{})
+i:=Object{11,33}
+j,_:=json.Marshal(i)
+_ = json.Unmarshal(j, &m)
+fmt.Println(m)
+
+```
+
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型

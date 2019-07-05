@@ -1,7 +1,7 @@
 /**
 @desc 语言范围
 */
-package _range
+package main
 
 import "fmt"
 

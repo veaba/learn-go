@@ -6,7 +6,7 @@
 @指针的指针 指针变量存放的又是另外一个指针变量的地址，称 这个指针变量 位指向指针指针变量
 nil => null None nil NULL 都指代零值或空值
 */
-package pointer
+package main
 
 import "fmt"
 
