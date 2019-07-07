@@ -7,7 +7,7 @@
 @ 一系列具有同类型或者不同类型的数据构成的数据集合
 @类似JavaScript中的Object 对象
 */
-package _struct
+package main
 
 import "fmt"
 
@@ -41,9 +41,15 @@ func structPtr() {
 	book2.author = "小李子"
 
 	printBook(&book2)
+
+	pointBook(book2)
+}
+
+func pointBook(books Books) {
+	fmt.Println(books)//{ 小李子 0}
 }
 
 func printBook(books *Books) {
 	fmt.Println(books.author)
-	fmt.Println(books)
+	fmt.Println(books)//&{ 小李子 0}
 }

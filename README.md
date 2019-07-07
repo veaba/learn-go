@@ -27,7 +27,9 @@
 
 > http://tour.studygolang.com/basics/3 可以学习到更多的例子加深使用，适合新手
 
-> https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md Go 语言入门
+> https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/03.9.md 《Go 语言入门指南》
+
+> https://books.studygolang.com/The-Golang-Standard-Library-by-Example/chapter01/01.1.html 《Go语言中文网》
 
 ## 安装
 
@@ -63,16 +65,16 @@ for _,num :=range [545,545,5]{
 }
 ``` 
 
-8、 如何比较 "2019"==2019？
-9、查看数据的 类型 类似， js 中的typeof
-10、怎么打印不出来常量 的位操作
+8. 如何比较 "2019"==2019？
+9. 查看数据的 类型 类似， js 中的typeof
+10. 怎么打印不出来常量 的位操作
 > //fmt.Printf("%i",Big)//怎 
 > var i int=999 //期待 int
 
-11、发查询反而没有单线程顺序查询快？？
-12、在某些场景下，互斥锁要比读写锁更快！！！
+11. 发查询反而没有单线程顺序查询快？？
+12. 在某些场景下，互斥锁要比读写锁更快！！！
 
-13、如何从这个字符串解析自己想要的数据
+13. 如何从这个字符串解析自己想要的数据
 > &{GET / HTTP/1.1 1 1 map[Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9,es;q=0.8,es-ES;q=0.7] Cache-Control:[max-age=0] Connection:[keep-alive] Upgrade-Insecure-Requests:[1] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36]] {} <nil> 0 [] false 127.0.0.1:8888 map[] map[] <nil> map[] 127.0.0.1:56865 / <nil> <nil> <nil> 0xc000018200}
 > https://studygolang.com/articles/14107#reply1
 
@@ -103,10 +105,10 @@ fmt.Println("TLS   ：", r.TLS)
 fmt.Println("Cancel   ：", r.Cancel)
 fmt.Println("Response   ：", r.Response)
 ```
-14、语法提示 main redeclared in this block
+14. 语法提示 main redeclared in this block
 > 同一个目录下面不能有多个package main
 
-15、为什么如何单个return？
+15. 为什么如何单个return？
 ```gotemplate
 //必须要给值
 func mongo() {
@@ -115,9 +117,25 @@ func mongo() {
 }
 ```
 
-16、如何引入不同目录的其他函数go文件
+16. 如何引入不同目录的其他函数go文件
 > 需要设置$GOROOT,好编译器有关
-17、同目录的文件如何引用
+17. 同目录的文件如何引用
+18. go  语言如何返回json接口数据
+
+19. go struct 转为map 输出
+
+```gotemplate
+type Object struct {
+	X int
+	Y int
+}
+m := make(map[string]interface{})
+i:=Object{11,33}
+j,_:=json.Marshal(i)
+_ = json.Unmarshal(j, &m)
+fmt.Println(m)
+
+```
 
 ## 主要特性
 - 自动垃圾回收

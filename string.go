@@ -5,19 +5,19 @@ import (
 	"strings"
 )
 
-func main()  {
+func main() {
 	s := "xxooo"
 	f := "oo"
 	t := "xx"
-	b := strings.HasPrefix(s,f)//prefix 前缀
-	fmt.Println(b,"\n")//false
-	b = strings.HasPrefix(s,t)//prefix 前缀
+	b := strings.HasPrefix(s, f) //prefix 前缀
+	fmt.Println(b, "\n")         //false
+	b = strings.HasPrefix(s, t)  //prefix 前缀
 	//fmt.Println(b)//true
 
-	b = strings.HasSuffix(s,f) //stuffix 后缀
+	b = strings.HasSuffix(s, f) //stuffix 后缀
 	//fmt.Println(b)//true
 
-	b = strings.HasSuffix(s,t) //stuffix 后缀
+	b = strings.HasSuffix(s, t) //stuffix 后缀
 	//fmt.Println(b)//false
 
 	//test()
@@ -28,13 +28,13 @@ func main()  {
 
 func test4() {
 	str := "The quick brown fox jumps over the lazy dog"
-	sl := strings.Fields(str)//[The quick brown fox jumps over the lazy dog]
+	sl := strings.Fields(str) //[The quick brown fox jumps over the lazy dog]
 	fmt.Println(sl)
 	fmt.Printf("Splitted in slice: %v\n", sl)
 	for _, val := range sl {
 		//fmt.Printf("%s - 0.0 ", val)
 		//fmt.Println(val)
-		fmt.Printf("%s ",val)
+		fmt.Printf("%s ", val)
 	}
 	fmt.Println()
 	str2 := "GO1|The ABC of Go|25"
@@ -46,7 +46,7 @@ func test4() {
 		fmt.Printf("%s - ", val)
 	}
 	fmt.Println()
-	str3 := strings.Join(sl2,";")
+	str3 := strings.Join(sl2, ";")
 	fmt.Printf("sl2 joined by ;: %s\n", str3)
 }
 
@@ -83,7 +83,3 @@ func test() {
 	fmt.Printf("The position of \"Burger\" is: ")
 	fmt.Printf("%d\n", strings.Index(str, "Burger"))
 }
-
-
-
-
