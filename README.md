@@ -120,7 +120,47 @@ func mongo() {
 16. 如何引入不同目录的其他函数go文件
 > 需要设置$GOROOT,好编译器有关
 17. 同目录的文件如何引用
-18. go  语言如何返回json接口数据
+18. go  语言如何返回json接口数据,map 转json
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Name struct {
+	Job string
+}
+func main()  {
+	method1()
+	method2()
+
+}
+
+/*方法一*/
+func method1(){
+	name :=Name{Job:"web前端"}
+
+	fmt.Println("name:",name)
+	buf,err:=json.MarshalIndent(name,"","  ")
+	if err!=nil{
+		return
+	}
+	fmt.Println("方法一：",string(buf))
+}
+/*方法二*/
+func method2()  {
+	name :=Name{"Go后端开发"}
+	jsonData,err:=json.Marshal(name)
+	if err!=nil{
+		return
+	}
+	fmt.Println("方法二：",string(jsonData))
+}
+
+```
 
 19. go struct 转为map 输出
 
