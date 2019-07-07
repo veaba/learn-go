@@ -76,6 +76,7 @@ for _,num :=range [545,545,5]{
 > &{GET / HTTP/1.1 1 1 map[Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9,es;q=0.8,es-ES;q=0.7] Cache-Control:[max-age=0] Connection:[keep-alive] Upgrade-Insecure-Requests:[1] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36]] {} <nil> 0 [] false 127.0.0.1:8888 map[] map[] <nil> map[] 127.0.0.1:56865 / <nil> <nil> <nil> 0xc000018200}
 > https://studygolang.com/articles/14107#reply1
 
+
 解决：
 ```text
 fmt.Println("xxxxx====xxx")
@@ -104,6 +105,20 @@ fmt.Println("Response   ：", r.Response)
 ```
 14、语法提示 main redeclared in this block
 > 同一个目录下面不能有多个package main
+
+15、为什么如何单个return？
+```gotemplate
+//必须要给值
+func mongo() {
+	const x=8;
+	return  x
+}
+```
+
+16、如何引入不同目录的其他函数go文件
+> 需要设置$GOROOT,好编译器有关
+17、同目录的文件如何引用
+
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
@@ -1089,6 +1104,11 @@ Greeting("hello:", "Joe", "Anna", "Eileen")
 
 ## http
 
+- w http.ResponseWriter 返回的消息是byte类型
+
+>w.Write([]byte("hello world""))
+
+
 ```go
 /**
 
@@ -1120,6 +1140,7 @@ func httpServer(w http.ResponseWriter,req *http.Request)  {
 }
 
 ```
+
 
 ## 内置依赖包
 
