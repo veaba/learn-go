@@ -46,10 +46,10 @@ func structPtr() {
 }
 
 func pointBook(books Books) {
-	fmt.Println(books)//{ 小李子 0}
+	fmt.Println(books) //{ 小李子 0}
 }
 
 func printBook(books *Books) {
 	fmt.Println(books.author)
-	fmt.Println(books)//&{ 小李子 0}
+	fmt.Println(books) //&{ 小李子 0}
 }

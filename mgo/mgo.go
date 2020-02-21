@@ -20,33 +20,31 @@ func main() {
 	createHttpServer()
 }
 
-type People struct{
-	_id         	bson.ObjectId
-	Name string	 `bson:"name"`
+type People struct {
+	_id  bson.ObjectId
+	Name string `bson:"name"`
 }
+
 func createHttpServer() {
 	session, err := mgo.Dial("127.0.0.1:27017")
 	//session, err := mgo.Dial("127.0.0.1:27017/hello")
-	fmt.Println("session:",session)
-	if err!=nil {
+	fmt.Println("session:", session)
+	if err != nil {
 		return
 	}
 	//result:=Users{}
 	var result []People
-	hasError:=session.DB("hello").C("worlds").Find(nil).All(&result)
-	if hasError!=nil{
+	hasError := session.DB("hello").C("worlds").Find(nil).All(&result)
+	if hasError != nil {
 		return
 	}
-	fmt.Println("result:",result)
-
-
+	fmt.Println("result:", result)
 
 	http.HandleFunc("/work", work)
 	http.HandleFunc("/manage", manage)
 	mongo.Mongo()
 	log.Fatal(http.ListenAndServe(":8888", nil))
 }
-
 
 /*
 @desc 路由
