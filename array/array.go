@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func arr()  {
+func arr() {
 	fmt.Println("I am arr")
 }
 

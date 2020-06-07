@@ -15,16 +15,16 @@ type Object struct {
 	Y int
 }
 
-func main()  {
-	i:=Object{11,33}
+func main() {
+	i := Object{11, 33}
 	m := make(map[string]interface{})
-	fmt.Println(i)//{11 33}
-	p:=&i
-	p.Y=999
-	fmt.Println(p)//&{11 999}
-	fmt.Println(*p)//指向的值
+	fmt.Println(i) //{11 33}
+	p := &i
+	p.Y = 999
+	fmt.Println(p)  //&{11 999}
+	fmt.Println(*p) //指向的值
 
-	j,_:=json.Marshal(p)
+	j, _ := json.Marshal(p)
 	_ = json.Unmarshal(j, &m)
 	fmt.Println(m)
 }
