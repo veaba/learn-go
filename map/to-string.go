@@ -10,5 +10,9 @@ func main() {
 	}
 
 	fmt.Println("====>", data)
-	fmt.Println("string====>", string(data))
+	// fmt.Println("string====>", string(data))
+	fmt.Println("====>", data["status"])
+	data["status"] = "wahahah"
+	fmt.Println("====>", data["status"])
+	println(data["status"])
 }
