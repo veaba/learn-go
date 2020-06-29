@@ -11,26 +11,26 @@ func main() {
 	var aMap map[string]string //创建集合
 	fmt.Println(aMap)          //map[]
 
-	aMap = make(map[string]string)
+	aMap1 := make(map[string]string)
 	fmt.Println(aMap) //map[] //map[]
 
-	aMap["2019"] = "MSI2018，季中冠军赛"
-	aMap["2018"] = "屌丝之年"
-	aMap["2020"] = "希望之年"
-	fmt.Println(aMap)
+	aMap1["2019"] = "MSI2018，季中冠军赛"
+	aMap1["2018"] = "屌丝之年"
+	aMap1["2020"] = "希望之年"
+	fmt.Println("===>aa", aMap1)
 
-	//for k,v:=range aMap{
-	//	fmt.Println(k)//key
-	//	fmt.Println(aMap[k])//value
-	//	fmt.Println(v)//value
-	//}
+	for k, v := range aMap1 {
+		fmt.Println(k)       //key
+		fmt.Println(aMap[k]) //value
+		fmt.Println(v)       //value
+	}
 
 	//删除集合 delete函数
-	_delete(aMap)
+	// _delete(aMap)
 
-	fmt.Println(aMap)
+	// fmt.Println(aMap)
 
-	checkMap(aMap)
+	// checkMap(aMap)
 
 }
 
