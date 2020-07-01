@@ -181,6 +181,12 @@ fmt.Println(m)
 
 > json转换过程中出现的 
 
+
+21. json 如何处理url 转为对象？两个值存在才数组？
+```json
+{"code":2500,"data":{"error":["bad_verification_code"],"error_description":["The code passed is incorrect or expired."],"error_uri":["https://developer.github.com/apps/managing-oauth-apps/troubleshooting-oauth-app-access-token-request-errors/#bad-verification-code"]},"message":"The code passed is incorrect or expired."}
+```
+
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型

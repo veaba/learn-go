@@ -12,5 +12,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(query)
+	fmt.Println(query) // 这里的格式是map
+
+
 }
