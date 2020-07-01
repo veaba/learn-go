@@ -1,5 +1,4 @@
 package main
-package main
 
 import (
 "github.com/kataras/iris/v12"
