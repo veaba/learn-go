@@ -3,7 +3,7 @@
 @goroutine 是轻量级协程，调度由runtime管理
 
 常见用于分离定时器和web server 的主程流程
-如以下例子
+如以下例子:
 
 	fmt.Println("Hello world!~")
 	app := iris.New()
@@ -21,14 +21,18 @@ import (
 
 func say(s string) {
 	for i := 0; i < 5; i++ {
-		time.Sleep(100 * time.Millisecond)
-		fmt.Println(s, i)
+		go hello(s, i)
+		time.Sleep(3 * time.Second)
+		fmt.Println(time.Now(), s, i)
 	}
 }
 
 func main() {
-	go say("world")
-	say("hello")
+	go say("go线程")
+	say("go 主线程")
+}
+func hello(h string, i int) {
+	fmt.Println("I am hello", h, i)
 }
 
 /**

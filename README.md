@@ -187,6 +187,9 @@ fmt.Println(m)
 {"code":2500,"data":{"error":["bad_verification_code"],"error_description":["The code passed is incorrect or expired."],"error_uri":["https://developer.github.com/apps/managing-oauth-apps/troubleshooting-oauth-app-access-token-request-errors/#bad-verification-code"]},"message":"The code passed is incorrect or expired."}
 ```
 
+22. go的函数是堆还是栈？
+应该是堆吧？
+
 ## 主要特性
 - 自动垃圾回收
 - 丰富的内置类型
@@ -961,8 +964,34 @@ func main()  {
 
 ## interface 接口
 
+
+## goroutine 
+
+问题:
+- goroutine 还可以继续goroutine 吗？
+
+### 概念与总结
+- 线程(Thread):
+  - 有称：轻量级进程(Lightwight process,LWP)
+  - 程序执行流的最小单元
+  - 标准线程包括：线程ID，指令指针（PC），寄存器集合，堆栈
+  - 线程是进程的一个实体，系统独立调度分配的单位
+  - 无法拥有系统资源，仅个别必备资源
+  - 可与同属一个进程的其他线程共享进程的全部资源
+- 协程(Coroutine):
+  - 又称：微线程与子例程（函数）
+  - 程序组件
+  - 协程比较灵活，实践中没有比子例程广泛
+  - 共享堆，不共享栈
+
+
 ## 并发concurrent
 ![concurrent](./src/images/concurrent.jpg)
+
+### go并发模型：CSP(communicating sequential processes)
+
+- go`不要以共享内存的方式来通信，相反，要通过通信来共享内存。`
+
 
 ## 通道channel
 
