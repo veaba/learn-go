@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main() {
+func main1() {
 	s := "xxooo"
 	f := "oo"
 	t := "xx"
