@@ -1202,6 +1202,10 @@ Greeting("hello:", "Joe", "Anna", "Eileen")
 ### 字符串与其他类型转换，通过 `strconv` 包实现
 更多 http://docs.studygolang.com/pkg/strconv/
 
+
+- int 转字符串 
+> strconv.Itoa(int)
+
 ## 标准库包
 |包名   |描述   |
 |---    |---   |
