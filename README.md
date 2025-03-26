@@ -66,7 +66,7 @@ for _,num :=range [545,545,5]{
 ``` 
 
 8. 如何比较 "2019"==2019？
-9. 查看数据的 类型 类似， js 中的typeof
+9. 查看数据的 类型 类似， js 中的typeof？
 10. 怎么打印不出来常量 的位操作
 > //fmt.Printf("%i",Big)//怎 
 > var i int=999 //期待 int
@@ -189,6 +189,38 @@ fmt.Println(m)
 
 22. go的函数是堆还是栈？
 应该是堆吧？
+
+23. 如何转换url 简写数组
+
+```js
+{
+	"code": 0,
+	"data": {
+		"access_token": [
+			"dadasd"
+		],
+		"expires_in": [
+			"28800"
+		],
+		"login": [
+			"veaba"
+		],
+		"refresh_token": [
+			"r1.dasdasdsa"                     // ==>    不要数组
+		],
+		"refresh_token_expires_in": [
+			"15638400"
+		],
+		"scope": [
+			""
+		],
+		"token_type": [
+			"bearer"
+		]
+	},
+	"message": "access-token"
+}
+```
 
 ## 主要特性
 - 自动垃圾回收

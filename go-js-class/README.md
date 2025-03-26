@@ -1,0 +1,1 @@
+# go 如何 书写 js class
